@@ -64,11 +64,17 @@ $primaryColor: rgb(45, 155, 146);
   text-align: center;
   min-width: 320px;
   min-height: 468px;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &-product {
+    text-align: center;
     width: 288px;
     height: 436px;
     display: flex;
+    flex-direction: column;
+    border: 1px solid black;
   }
 }
