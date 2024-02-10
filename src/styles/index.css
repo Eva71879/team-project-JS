@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +22,6 @@
   height: 64px;
   margin: 0 0 1px 0;
 }
-
 .header-row {
   padding: 18px 14px 18px 14px;
   display: flex;
@@ -37,12 +35,10 @@
   cursor: pointer;
   color: #5C6970;
 }
-
 .button.active {
   background-color: #3625FF;
   color: white;
 }
-
 .button.active::before {
   content: "• ";
   font-size: 12px;
@@ -76,7 +72,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .item-product {
   text-align: center;
   width: 288px;
@@ -84,6 +79,4 @@
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
