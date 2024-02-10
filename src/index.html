@@ -11,9 +11,12 @@
 <body>
   <header class="header">
     <div class="header-row">
-      <input type="text" placeholder=" - что искать - " class="inputSearch">
-      <button class="button-search" id="btnSearch"></button>
-      <div>
+      <div class="search__block">
+        <button class="button-search" id="btnSearch"></button>
+        <input type="search" placeholder="  Search..." class="inputSearch hide">
+      </div>
+
+      <div class="category">
         <button class="button">all</button>
         <button class="button">smartphones</button>
         <button class="button">laptops</button>
@@ -24,6 +27,7 @@
         <button class="button">furniture</button>
         <!-- и тд позже добавим-->
       </div>
+      <button class="basket"> basket </button>
     </div>
   </header>
   <main>
