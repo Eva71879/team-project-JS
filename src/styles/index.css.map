@@ -1,1 +1,10 @@
-{"version":3,"sources":["_global.scss","index.css"],"names":[],"mappings":"AACA;EACE,wBAFa;ACEf;;ADIE;EACE,qBAAA;EACA,cAAA;EACA,aAAA;EACA,iDAAA;ACDJ","file":"index.css"}
+{
+    "version": 3,
+    "sources": [
+        "_global.scss",
+        "index.css"
+    ],
+    "names": [],
+    "mappings": "AACA;EACE,wBAFa;ACEf;;ADIE;EACE,qBAAA;EACA,cAAA;EACA,aAAA;EACA,iDAAA;ACDJ",
+    "file": "index.css"
+}
