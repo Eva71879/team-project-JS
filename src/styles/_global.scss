@@ -18,11 +18,25 @@ $font-sizes: (
   color: $color-main;
 }
 
+
+$primaryColor: rgb(45, 155, 146);
+
+
+.title {
+  color: $primaryColor;
+}
+
+
+.header {
+  background-color: #EFEEF4;
+
+
 .header {
   background-color: #EFEEF4;
   width: 100%;
   height: 64px;
   margin: 0 0 1px 0;
+
 
   &-row {
     padding: 18px 14px 18px 14px;
@@ -32,6 +46,7 @@ $font-sizes: (
   }
 }
 
+
 .button {
   background-color: #FFFFFF;
   padding: 6px 8px 6px 8px;
@@ -39,10 +54,12 @@ $font-sizes: (
   cursor: pointer;
   color: #5C6970;
 
+
   &.active {
     background-color: $color-blue; 
     background-color: #3625FF;
     color: white;
+
 
     &::before {
       content: '• ';
@@ -51,10 +68,12 @@ $font-sizes: (
   }
 }
 
+
 .search__block {
   display: flex;
   margin: 0 8px 0 0;
 }
+
 
 .button-search {
   width: 28px;
@@ -66,17 +85,51 @@ $font-sizes: (
   border: none;
 }
 
+
 .inputSearch {
-  // height: 28px;
   border-style: none;
+  padding: 0 5px;
+}
+
+.button-close {
+  background-color: #FFFFFF;
+  border-style: none;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
 }
 
 .basket {
   margin: 0 0 0 8px;
 }
 
+
 .hide {
   display: none;
+}
+
+.attention {
+  animation: fade 10s ease forwards;
+  background-color: #3625FF;
+  color: #FFFFFF;
+  height: 70px;
+  left: 150px;
+  line-height: 20px;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 250px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .container {
@@ -86,6 +139,7 @@ $font-sizes: (
   padding: 1px 0 0 0;
 }
 
+
 .item {
   background-color: #EFEEF4;
   min-width: 320px;
@@ -94,6 +148,7 @@ $font-sizes: (
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 
   &-product {
     width: 288px;
