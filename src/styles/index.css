@@ -8,6 +8,17 @@
   color: #2E3438;
 }
 
+.title {
+  color: rgb(230, 143, 12);
+}
+
+.content__subtitle {
+  color: rgb(0, 4, 255);
+  display: block;
+  height: 200px;
+  background-image: url(../images/oqchorqyiey.jpeg);
+}
+
 .header {
   background-color: #EFEEF4;
   width: 100%;
@@ -68,6 +79,7 @@
   height: 436px;
   display: flex;
   flex-direction: column;
+
 }
 
 .footer {
@@ -139,3 +151,7 @@
   justify-content: center;
   align-items: center;
 }/*# sourceMappingURL=index.css.map */
+=======
+  border: 1px solid black;
+}/*# sourceMappingURL=index.css.map */
+

@@ -28,10 +28,11 @@ $font-sizes: (
     padding: 18px 14px 18px 14px;
     display: flex;
     flex-wrap: row;
+    align-items: center;
   }
 }
 
-.button{
+.button {
   background-color: #FFFFFF;
   padding: 6px 8px 6px 8px;
   border: 0;
@@ -40,6 +41,7 @@ $font-sizes: (
 
   &.active {
     background-color: $color-blue; 
+    background-color: #3625FF;
     color: white;
 
     &::before {
@@ -47,6 +49,11 @@ $font-sizes: (
       font-size: 12px;
     }
   }
+}
+
+.search__block {
+  display: flex;
+  margin: 0 8px 0 0;
 }
 
 .button-search {
@@ -57,15 +64,28 @@ $font-sizes: (
   background-position: center;
   cursor: pointer;
   border: none;
-  margin: 0 8px 0 0;
+}
+
+.inputSearch {
+  // height: 28px;
+  border-style: none;
+}
+
+.basket {
+  margin: 0 0 0 8px;
+}
+
+.hide {
+  display: none;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 2px; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
   padding: 1px 0 0 0;
 }
+
 .item {
   background-color: #EFEEF4;
   min-width: 320px;
