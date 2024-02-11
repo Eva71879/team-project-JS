@@ -178,18 +178,19 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 .image-block {
-  width: 288px;
-  height: 288px;
+  min-width: 288px;
+  min-height: 288px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border: 1px solid black;
   
 }
 
 .image {
   max-width: 100%;
-  max-height: 100%;
+
 }
 
 .rating {
@@ -219,7 +220,7 @@ $primaryColor: rgb(45, 155, 146);
 
 .price{
   width: 71px;
-  height: 24px;
+  min-height: 24px;
   padding: 0 8px 0 4px;
   background-color: $color-blue;
   font-size: 14px;
