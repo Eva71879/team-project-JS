@@ -91,11 +91,15 @@ $primaryColor: rgb(45, 155, 146);
   display: none;
 }
 
+.makeInvsbl {
+  opacity: 0;
+  transition: opacity 1s; // добавьте плавное появление/исчезновение
+}
+
 .attention {
-  animation: fade 10s ease forwards;
   background-color: #3625FF;
+  border-radius: 0 10px 10px 10px;
   color: #FFFFFF;
-  height: 70px;
   left: 150px;
   line-height: 20px;
   padding: 15px;
@@ -105,17 +109,13 @@ $primaryColor: rgb(45, 155, 146);
   width: 250px;
 }
 
-@keyframes fade {
-  from {
-    opacity: 1;
-  }
 
-  to {
-    opacity: 0;
-  }
+.main {
+  width: 700px;
 }
 
 .container {
+  max-width: 700px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;

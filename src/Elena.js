@@ -11,7 +11,7 @@ async function getCardInfo() {
         // console.log(products);
         // test2.innerHTML = JSON.stringify(products);
         return products;
-        
+
     } catch (error) {
         console.error('Ошибка:', error);
         // throw error; // Пробрасываем ошибку дальше
@@ -31,21 +31,21 @@ function createCardElement(obj) {
       </div>
     `;
     return card;
-  }
+}
 
 // добавляем разметку в контейнер
 function addCardToContainer(container, card) {
     const cardElement = createCardElement(card);
     container.innerHTML += cardElement;
-  }
-  
+}
+
 // выводим карточки на страницу
 async function displayCards() {
     const container = document.querySelector(".container");
     try {
         const productsData = await getCardInfo();
         const products = productsData.products;
-        
+
         products.forEach((product) => {
             addCardToContainer(container, product);
         });
