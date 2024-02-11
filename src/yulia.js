@@ -70,15 +70,18 @@ inputSearch.addEventListener('keyup', event => {
     //создаем разметку карточки
     function createCardElement(obj) {
         const card = `
-      <div>
-        <p>${obj.discountPercentage}</p>
-        <img src="${obj.thumbnail}" alt="thumbnail">
-        <p>${obj.rating}</p>
-        <p>${obj.title}</p>
-        <p>${obj.description}</p>
-        <p>${obj.price}</p>
-      </div>
+    <div class='item'>
+            <div class='item-product'>
+            <p class='discount'><span class='discount-percentage'>${obj.discountPercentage}</span> off sale</p>
+            <div class='image-block'><img src="${obj.thumbnail}" alt="thumbnail" class='image'></div>
+            <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
+            <p class='title'>${obj.title}</p>
+            <p class='description'>${obj.description}</p>
+            <p class='price'><span class='price-bin'></span>$${obj.price}</p>
+        </div>
+    </div>
     `;
+
         return card;
     }
 
@@ -98,9 +101,10 @@ inputSearch.addEventListener('keyup', event => {
 
             products.forEach((product) => {
                 addCardToContainer(container, product);
+                // product.classList.add('item - product');
             });
         } catch (error) {
-            console.log(error);
+            console.error('Ошибка при отображении карточек:', error);
         }
     }
 
