@@ -1,7 +1,21 @@
+
+$color-main: #2E3438;
+$color-blue: #3625FF; 
+$font-inter: 'Inter', sans-serif;
+
+$font-sizes: (
+  xs: 12px,
+  s: 14px,
+  m: 15px,
+);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 500;
+  font-family: $font-inter;
+  color: $color-main;
 }
 
 
@@ -17,6 +31,8 @@ $primaryColor: rgb(45, 155, 146);
   background-color: #EFEEF4;
 
 
+.header {
+  background-color: #EFEEF4;
   width: 100%;
   height: 64px;
   margin: 0 0 1px 0;
@@ -40,6 +56,7 @@ $primaryColor: rgb(45, 155, 146);
 
 
   &.active {
+    background-color: $color-blue; 
     background-color: #3625FF;
     color: white;
 
@@ -125,7 +142,6 @@ $primaryColor: rgb(45, 155, 146);
 
 .item {
   background-color: #EFEEF4;
-  text-align: center;
   min-width: 320px;
   min-height: 468px;
   display: flex;
@@ -135,11 +151,83 @@ $primaryColor: rgb(45, 155, 146);
 
 
   &-product {
-    text-align: center;
     width: 288px;
     height: 436px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
   }
 }
+
+.footer {
+  margin-top: 2px;
+  width: 100%;
+  height: 64px;
+  background-color: #EFEEF4;
+}
+
+.discount {
+  width: 108px;
+  height: 24px;
+  padding: 2px 4px 2px 4px;
+  background-color: white;
+  border-radius: 4px;
+
+  &-percentage{
+    color: $color-blue ;
+  }
+}
+
+.image-block {
+  width: 288px;
+  height: 288px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.rating {
+  width: 62px;
+  height: 24px;
+  padding: 2px 4px 2px 4px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 10px ;
+
+  &-star {
+    color: $color-blue;
+    padding: 0 2px 0 2px;
+  }
+}
+
+.title {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px;
+}
+
+.description {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.price{
+  width: 71px;
+  height: 24px;
+  padding: 0 8px 0 4px;
+  background-color: $color-blue;
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,4 +1,4 @@
-// // пробую кнопку 
+// // пробую кнопку
 
 const buttons = document.querySelectorAll('.button');
 
