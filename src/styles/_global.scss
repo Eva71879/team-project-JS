@@ -77,9 +77,6 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 .button-close {
-  // background-image: url(../images/search.png);
-  // background-size: cover;
-  // background-position: center;
   background-color: #FFFFFF;
   border-style: none;
   width: 28px;
@@ -96,6 +93,33 @@ $primaryColor: rgb(45, 155, 146);
   display: none;
 }
 
+.attention {
+  animation: fade 7s ease forwards;
+  background-color: #3625FF;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 12px;
+  height: 70px;
+  left: 150px;
+  line-height: 16px;
+  margin: auto;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 250px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
 
 .container {
   display: grid;
