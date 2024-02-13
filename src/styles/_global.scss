@@ -226,3 +226,11 @@ $primaryColor: rgb(45, 155, 146);
   justify-content: center;
   align-items: center;
 }
+
+.category {
+  display: flex;
+  overflow-x: auto; 
+  white-space: nowrap; 
+  gap: 2px;
+}
+

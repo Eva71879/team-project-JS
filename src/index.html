@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
 <body>
   <div class="wrapper"><!--обертка, нужна для корректной работы модального окна корзины (отсутствия скролла body при открытой cart)-->
@@ -17,24 +17,16 @@
         <input type="text" placeholder="  Search..." class="inputSearch hide">
         <button class="button-close hide">&#10005</button>
       </div>
-      <div class="category">
-        <button class="button">all</button>
-        <button class="button">smartphones</button>
-        <button class="button">laptops</button>
-        <button class="button">fragrances</button>
-        <button class="button">skincare</button>
-        <button class="button">groseries</button>
-        <button class="button">home-decoration</button>
-        <button class="button">furniture</button>
-
-        <button class="cart" id="cart">
-          <a href="#popup" class="popup-link">
-              <img src="./images/cart.svg" class="cart__image" alt="cart">
-              <span class="cart__title">cart</span>
-          </a>
-        </button>        
-
-        <!-- и тд позже добавим-->
+<div class="category">
+          <button class="button">all</button>
+        </div>
+<button class="basket"> basket </button>
+<button class="cart" id="cart">
+  <a href="#popup" class="popup-link">
+      <img src="./images/cart.svg" class="cart__image" alt="cart">
+      <span class="cart__title">cart</span>
+  </a>
+</button>
       </div>
 
     </div>
@@ -63,8 +55,8 @@
     </div>
     </div>
   </header>
-  <main class="main">
-    <div class="attention makeInvsbl"></div>
+  <main>
+    <div class="attention hide">Ничего не найдено, попробуйте изменить запрос</div>
     <div class="container">
     </div>
   </main>
