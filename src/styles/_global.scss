@@ -1,3 +1,5 @@
+@import url(_cart.scss);
+
 $color-main: #2E3438;
 $color-blue: #3625FF;
 $font-inter: 'Inter', sans-serif;
@@ -94,9 +96,7 @@ $primaryColor: rgb(45, 155, 146);
   font-size: 12px;
 }
 
-.basket {
-  margin: 0 0 0 8px;
-}
+
 
 
 .hide {
