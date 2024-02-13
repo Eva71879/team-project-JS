@@ -29,10 +29,6 @@ $primaryColor: rgb(45, 155, 146);
 
 .header {
   background-color: #EFEEF4;
-
-
-.header {
-  background-color: #EFEEF4;
   width: 100%;
   height: 64px;
   margin: 0 0 1px 0;
@@ -232,3 +228,9 @@ $primaryColor: rgb(45, 155, 146);
   align-items: center;
 }
 
+.category {
+  display: flex;
+  overflow-x: auto; 
+  white-space: nowrap; 
+  gap: 2px;
+}
