@@ -33,6 +33,7 @@ $primaryColor: rgb(45, 155, 146);
   width: 100%;
   height: 64px;
   margin: 0 0 1px 0;
+  overflow: hidden;
 
 
   &-row {
@@ -40,6 +41,11 @@ $primaryColor: rgb(45, 155, 146);
     display: flex;
     flex-wrap: row;
     align-items: center;
+    white-space: nowrap;
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
   }
 }
 
@@ -127,7 +133,7 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 .container {
-  max-width: 700px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
@@ -179,7 +185,6 @@ $primaryColor: rgb(45, 155, 146);
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 1px solid black;
 
 }
 
