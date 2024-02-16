@@ -32,11 +32,9 @@ function createCardElement(obj) {
         </div>
     </div>
     `;
-    
+
     return card;
 }
-
-
 
 // добавляем разметку в контейнер
 function addCardToContainer(container, card) {

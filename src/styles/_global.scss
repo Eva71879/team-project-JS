@@ -63,12 +63,13 @@ $primaryColor: rgb(45, 155, 146);
   }
 }
 
+//////////////////////////////////////////////////////////
+@import "yulia.css"; //search-block
 
 .search__block {
   display: flex;
   margin: 0 8px 0 0;
 }
-
 
 .button-search {
   width: 28px;
@@ -79,7 +80,6 @@ $primaryColor: rgb(45, 155, 146);
   cursor: pointer;
   border: none;
 }
-
 
 .inputSearch {
   border-style: none;
@@ -93,11 +93,6 @@ $primaryColor: rgb(45, 155, 146);
   height: 28px;
   font-size: 12px;
 }
-
-.basket {
-  margin: 0 0 0 8px;
-}
-
 
 .hide {
   display: none;
@@ -121,13 +116,14 @@ $primaryColor: rgb(45, 155, 146);
   width: 250px;
 }
 
+//////////////////////////////////////////////
 
-.main {
-  width: 700px;
+.basket {
+  margin: 0 0 0 8px;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
@@ -143,6 +139,7 @@ $primaryColor: rgb(45, 155, 146);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
 
   &-product {
