@@ -5,6 +5,7 @@ const btnSearch = document.getElementById('btnSearch'); //переменная �
 const attention = document.querySelector('.attention'); //переменная для вывода сообщения о результате поиска
 const pagination = document.querySelector('.pagination'); //переменная для списка номеров страниц
 
+
 //разворачиваем-сворачиваем строку поиска и скрываем кнопки категорий по клику на лупу
 btnSearch.addEventListener('click', function () {
     category.classList.toggle('hide');
