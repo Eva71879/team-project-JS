@@ -9,14 +9,7 @@
 }
 
 .title {
-  color: rgb(230, 143, 12);
-}
-
-.content__subtitle {
-  color: rgb(0, 4, 255);
-  display: block;
-  height: 200px;
-  background-image: url(../images/oqchorqyiey.jpeg);
+  color: rgb(45, 155, 146);
 }
 
 .header {
@@ -29,6 +22,7 @@
   padding: 18px 14px 18px 14px;
   display: flex;
   flex-wrap: row;
+  align-items: center;
 }
 
 .button {
@@ -40,11 +34,17 @@
 }
 .button.active {
   background-color: #3625FF;
+  background-color: #3625FF;
   color: white;
 }
 .button.active::before {
   content: "• ";
   font-size: 12px;
+}
+
+.search__block {
+  display: flex;
+  margin: 0 8px 0 0;
 }
 
 .button-search {
@@ -55,9 +55,51 @@
   background-position: center;
   cursor: pointer;
   border: none;
-  margin: 0 8px 0 0;
 }
 
+.inputSearch {
+  border-style: none;
+  padding: 0 5px;
+}
+
+.button-close {
+  background-color: #FFFFFF;
+  border-style: none;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.basket {
+  margin: 0 0 0 8px;
+}
+
+.hide {
+  display: none;
+}
+
+.attention {
+  animation: fade 10s ease forwards;
+  background-color: #3625FF;
+  color: #FFFFFF;
+  height: 70px;
+  left: 150px;
+  line-height: 20px;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 250px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -79,7 +121,6 @@
   height: 436px;
   display: flex;
   flex-direction: column;
-
 }
 
 .footer {
@@ -101,17 +142,17 @@
 }
 
 .image-block {
-  width: 288px;
-  height: 288px;
+  min-width: 288px;
+  min-height: 288px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border: 1px solid black;
 }
 
 .image {
   max-width: 100%;
-  max-height: 100%;
 }
 
 .rating {
@@ -140,7 +181,7 @@
 
 .price {
   width: 71px;
-  height: 24px;
+  min-height: 24px;
   padding: 0 8px 0 4px;
   background-color: #3625FF;
   font-size: 14px;
@@ -150,8 +191,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}/*# sourceMappingURL=index.css.map */
-=======
-  border: 1px solid black;
-}/*# sourceMappingURL=index.css.map */
+}
 
+.category {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 2px;
+}/*# sourceMappingURL=index.css.map */

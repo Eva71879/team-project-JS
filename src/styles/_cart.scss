@@ -1,0 +1,143 @@
+body.lock {
+  overflow: hidden;
+}
+
+/*.button {
+  background-color: #FFFFFF;
+  padding: 6px 8px 6px 8px;
+  border: 0;
+  cursor: pointer;
+  color: #5C6970;
+
+
+  &.active {
+    background-color: $color-blue;
+    background-color: #3625FF;
+    color: white;
+
+
+    &::before {
+      content: '• ';
+      font-size: 12px;
+    }
+  }
+}*/
+
+.cart {
+  background-color: #FFFFFF;
+  border: 0;
+  }
+
+.cart__image {
+  vertical-align: middle; /* выравниваем изображение по вертикали */
+  padding-right: 2px;
+}
+
+.cart__title {
+  color: rgba(54, 37, 255, 1);
+}
+
+.popup-link {
+  display: block;
+  text-decoration: none;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 6px 8px 6px 8px;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(239, 238, 244, 0.8);
+  top: 0;
+  right: 0; /*чтобы корзина появлялась справа*/
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto; /*вертикальный скролл popup появится при необходимости*/
+  overflow-x: hidden; /*горизонтальный скрол popup скрыт*/
+  transition: all 0.8s ease 0s;
+}
+  
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0%, -50%) rotateY(0deg);
+  opacity: 1;
+}
+
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+  .popup__body {
+
+    min-height: 100vh;/*появился вертикальный скролл*/
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 30px 10px; /*чтобы popup не прилипал к краям экрана*/
+  }
+
+  .popup__content {
+    background-color: #fff;
+    color: #000;
+    min-width: 320px;
+    min-height: 100vh;
+    padding: 10px;
+    position: absolute;
+    top: 50%; /*Положение по вертикали в центре */
+    right: 0; /* Положение по горизонтали в центре */
+    transform: translate(50%, -50%) perspective(600px) ; /* Центрируем и вращаем окно */
+    transition: all 0.8s ease 0s; /* Плавное появление */
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+.popup__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.popup__header {
+  font-size: 20px;
+  margin: 0px 0px 1em 0px;
+}
+
+.popup__text {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.popup__footer {
+  height: 50px; /* Высота футера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__backToProducts {
+  width: 280px;
+  height: 40px;
+  background-color: rgba(54, 37, 255, 1);
+  color: #fff;
+}
