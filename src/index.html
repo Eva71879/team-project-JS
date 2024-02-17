@@ -5,72 +5,81 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Randomberries</title>
 </head>
 
 <body>
   <div class="wrapper">
+
     <!--обертка, нужна для корректной работы модального окна корзины (отсутствия скролла body при открытой cart)-->
     <header class="header" id="header">
+
       <div class="header-row">
+        <div class="logo">RANDOMBERRIES</div>
         <div class="search__block">
           <button class="button-search" id="btnSearch"></button>
           <input type="text" placeholder="  Search..." class="inputSearch hide">
           <button class="button-close hide">&#10005</button>
         </div>
-  <div class="category">
-            <button class="button">all</button>
-          </div>
-  
-          <button class="cart" id="cart">
-            <a href="#popup" class="popup-link">
-                <span class="cart__image"></span>
-                <span class="cart__title">cart</span>
-            </a>
-            <!-- сюда добавляется количество товаров -->
+        <div class="category">
+          <button class="button">all</button>
+        </div>
+
+        <button class="cart" id="cart">
+          <a href="#popup" class="popup-link">
+            <span class="cart__image"></span>
+            <span class="cart__title">cart</span>
+          </a>
+          <!-- сюда добавляется количество товаров -->
         </button>
       </div>
+
       <div id="popup" class="popup">
-         <div class="popup__body">
+        <div class="popup__body">
           <div class="popup__content">
             <div class="popup__header">
               <div class="popup__header-label">
                 <span class="popup__header-image"></span>
                 <span class="popup__header-title">cart</span>
               </div>
-            <a href="#header" class="popup__close close-popup">&times;</a>
+              <a href="#header" class="popup__close close-popup">&times;</a>
             </div>
             <div class="popup__container">
-                <!-- сюда добавляется содержимое корзины из JS -->
+              <!-- сюда добавляется содержимое корзины из JS -->
+            </div>
+            <div class="popup__container-bottom">
+              <div>
+                <p class="cart-list__TotalPositions"></p>
               </div>
-              <div class="popup__container-bottom">
-                <div>
-                  <p class="cart-list__TotalPositions"></p>
-                </div>
-                <div class="cart-list__TotalPrice">
-                  <p>$0</p>
-                </div>
+              <div class="cart-list__TotalPrice">
+                <p>$0</p>
               </div>
+            </div>
             <div class="popup__footer">
               <button class="button__backToProducts">back to products</button>
-            </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- </div> -->
+
     </header>
+
     <main>
       <div class="attention makeInvsbl"></div>
       <div class="container">
-              <!-- сюда добавляется разметка карточки из JS -->
+        <!-- сюда добавляется разметка карточки из JS -->
       </div>
       <div class="pagination">
 
       </div>
     </main>
+
     <footer class="footer">
     </footer>
+
     <div id="posts-container"></div>
+
   </div>
 </body>
 

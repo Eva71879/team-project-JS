@@ -5,7 +5,6 @@ const btnSearch = document.getElementById('btnSearch'); //переменная �
 const attention = document.querySelector('.attention'); //переменная для вывода сообщения о результате поиска
 const pagination = document.querySelector('.pagination'); //переменная для списка номеров страниц
 
-
 //разворачиваем-сворачиваем строку поиска и скрываем кнопки категорий по клику на лупу
 btnSearch.addEventListener('click', function () {
     category.classList.toggle('hide');
@@ -63,7 +62,7 @@ inputSearch.addEventListener('keyup', event => {
     async function main() {
         const productsDataSearch = await getCardInfoBySearch(); //получаем данные в переменную
         const askingProducts = productsDataSearch.products; //получаем массив объектов
-        let cardsPerPage = 10; //задаем кол-во товаров на странице 
+        let cardsPerPage = 8; //задаем кол-во товаров на странице 
         let currentPage = 1; //текущая страница выводится первой
 
         //вывод контента
@@ -81,18 +80,37 @@ inputSearch.addEventListener('keyup', event => {
             //формируем карточки для каждого товара и добавляем в контент-блок
             searchCardsOnPage.forEach((obj) => {
                 const card = document.createElement('div');
+                // card.innerHTML = `
+                // // <div class='item'>
+                // // <div class='item-product'>
+                // // <p class='discount'><span class='discount-percentage'>${obj.discountPercentage}</span> off sale</p>
+                // // <div class='image-block'><img src="${obj.thumbnail}" alt="thumbnail" class='image'></div>
+                // // <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
+                // // <p class='title'>${obj.title}</p>
+                // // <p class='description'>${obj.description}</p>
+                // // <p class='price'><span class='price-bin'></span>$${obj.price}</p>
+                // // </div>
+                // // </div>
+                // `;
+
                 card.innerHTML = `
                 <div class='item'>
-                <div class='item-product'>
-                <p class='discount'><span class='discount-percentage'>${obj.discountPercentage}</span> off sale</p>
-                <div class='image-block'><img src="${obj.thumbnail}" alt="thumbnail" class='image'></div>
-                <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
-                <p class='title'>${obj.title}</p>
-                <p class='description'>${obj.description}</p>
-                <p class='price'><span class='price-bin'></span>$${obj.price}</p>
-                </div>
-                </div>
-                `;
+                    <div class='item-product'>
+                        <p class='discount'>
+                            <span class='discount-percentage'>${obj.discountPercentage}</span> off sale
+                        </p>
+                        <div class='image-block'>
+                            <img src="${obj.thumbnail}" alt="thumbnail" class='image'>
+                        </div>
+                        <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
+                        <p class='title'>${obj.title}</p> <p class='description'>${obj.description}</p>
+                        <button class='price putToCartButton' data-product='${JSON.stringify(obj)}'>
+                            <span class='price-bin'></span>$${obj.price}
+                        </button>
+                    </div>
+                </div>;
+                `
+
                 container.appendChild(card);
             })
         }
