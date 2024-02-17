@@ -33,7 +33,7 @@ function createCardElement(obj) {
         </div>
     </div>
     `;
-    
+
     return card;
 }
 

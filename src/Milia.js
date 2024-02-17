@@ -1,4 +1,5 @@
 //получаем данные обо всех имеющихся продуктах (products)
+const categoryRow = document.querySelector(".category");
 
 async function getCardInfo() {
   try {
@@ -32,7 +33,7 @@ function addButton(categoryRow, category) {
 
 // выводим кнопки на страницу
 async function createButtons() {
-  const categoryRow = document.querySelector(".category");
+
   try {
     const productsCategoriesData = await getCardInfo();
     productsCategoriesData.forEach((category) => {
@@ -108,6 +109,12 @@ async function displayCards(category) {
     console.error('Ошибка при отображении карточек:', error);
   }
 }
+
+categoryRow.addEventListener('wheel', function(event) {
+  this.scrollLeft += event.deltaY;
+  event.preventDefault()
+})
+
 
 
 createButtons();
