@@ -98,12 +98,15 @@ document.addEventListener('click', function(event) {
             if (productAmountElement) {
                 productAmountElement.textContent = cart[newProductId].count;
             }
+            updateCartAmount()
         } else {
             // Добавляем новый товар в корзину
             cart[newProductId] = {
                 "product": productToAdd,
                 "count": 1
             };
+
+            updateCartAmount()
 
             // Добавляем разметку нового товара в корзину
             const cartList = document.querySelector('.popup__container');
