@@ -20,29 +20,40 @@
 <div class="category">
           <button class="button">all</button>
         </div>
+
         <button class="cart" id="cart">
           <a href="#popup" class="popup-link">
-              <img src="./images/cart.svg" class="cart__image" alt="cart">
+              <span class="cart__image"></span>
               <span class="cart__title">cart</span>
           </a>
-        </button>
+          <!-- сюда добавляется количество товаров -->
+      </button>
     </div>
     <div id="popup" class="popup">
        <div class="popup__body">
         <div class="popup__content">
           <div class="popup__header">
-            <div>
-            <img src="./images/cart_empty.svg" class="popup__header-image" alt="cart_empty">
+            <div class="popup__header-label">
+              <span class="popup__header-image"></span>
+              <span class="popup__header-title">cart</span>
             </div>
           <a href="#header" class="popup__close close-popup">&times;</a>
           </div>
-          <div class="popup__text">
-            <p class="cart__text">
-            cart is empty &colon;&lpar;</p>
-          </div>
-            <div class="popup__footer">
-              <button class="button__backToProducts">back to products</button>
+          <div class="popup__container">
+              <!-- сюда добавляется содержимое корзины из JS -->
             </div>
+            <div class="popup__container-bottom">
+              <div>
+                <p class="cart-list__TotalPositions"></p>
+              </div>
+              <div class="cart-list__TotalPrice">
+                <p>$0</p>
+              </div>
+            </div>
+          <div class="popup__footer">
+            <button class="button__backToProducts">back to products</button>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -50,7 +61,7 @@
   <main>
     <div class="attention hide">Ничего не найдено, попробуйте изменить запрос</div>
     <div class="container">
-    </div>
+      <!-- сюда добавляется разметка карточки из JS -->
   </main>
   <footer class="footer">
   </footer>

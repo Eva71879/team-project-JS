@@ -47,7 +47,7 @@ function popupOpen(curentPopup) {
     }
 }
 
-function popupClose(popupActive, doUnlock = true) {
+export function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
         if (doUnlock) {
@@ -92,10 +92,16 @@ function bodyUnLock() {
     }, timeout);
 }
 
-document.addEventListener('keydown', function (e) {//закрытие попапа через Escape
+document.addEventListener('keydown', function (e) {
     if (e.which === 27 ) {// код клавиши Escape
         const popupActive = document.querySelector('.popup.open');
         popupClose(popupActive);
     }
 });
+
+// document.querySelector('.button__backToProducts').addEventListener('click', function () {
+//     const popupActive = document.querySelector('.popup.open');
+//     popupClose(popupActive);
+// });
+
 

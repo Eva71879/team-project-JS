@@ -2,40 +2,94 @@ body.lock {
   overflow: hidden;
 }
 
-/*.button {
-  background-color: #FFFFFF;
-  padding: 6px 8px 6px 8px;
-  border: 0;
-  cursor: pointer;
-  color: #5C6970;
+.price-bin {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/cart-white.svg);
+  background-size: cover;
+  margin-right: 3px;
+}
 
+.price.putToCartButton {
+  transition: box-shadow 0.2s; /* добавляем плавный переход для box-shadow */
+  background-color: #3625FF;
 
-  &.active {
-    background-color: $color-blue;
-    background-color: #3625FF;
-    color: white;
+}
 
-
-    &::before {
-      content: '• ';
-      font-size: 12px;
-    }
-  }
-}*/
+.price.putToCartButton:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* добавляем тень вокруг кнопки */
+}
 
 .cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #FFFFFF;
-  border: 0;
-  }
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  position: relative;
+}
+
+.cartAmount {
+  position: absolute;
+  top: -5px; /* Переместить элемент вверх */
+  right: -10px; /* Переместить элемент вправо */
+  background-color: #3625ff;
+  color: white;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  line-height: 18px;
+  text-align: center;
+}
 
 .cart__image {
-  vertical-align: middle; /* выравниваем изображение по вертикали */
-  padding-right: 2px;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/cart-blue.svg);
+  background-size: cover;
+  background-position: left;
 }
 
 .cart__title {
-  color: rgba(54, 37, 255, 1);
+  color: #3625ff;
+  margin-left: 3px;
 }
+
+/*.cartFull {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3625ff;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+}
+
+.cartFull__image {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/cart-white.svg);
+  background-size: cover;
+  background-position: left;
+}
+
+.cartFull__title {
+  color: #FFFFFF;
+  margin-left: 3px;
+}*/
+
+/*.button-search {
+  width: 28px;
+  height: 28px;
+  background-image: url(../images/search.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+}*/
+
 
 .popup-link {
   display: block;
@@ -81,35 +135,30 @@ body.lock {
 }
 
   .popup__body {
-
-    min-height: 100vh;/*появился вертикальный скролл*/
-    
+    min-height: 100vh;/*появился вертикальный скролл*/    
     display: flex;
     align-items: center;
     justify-content: center;
     /*padding: 30px 10px; /*чтобы popup не прилипал к краям экрана*/
   }
 
-  .popup__content {
-    background-color: #fff;
-    color: #000;
-    min-width: 320px;
-    min-height: 100vh;
-    padding: 10px;
-    position: absolute;
-    top: 50%; /*Положение по вертикали в центре */
-    right: 0; /* Положение по горизонтали в центре */
-    transform: translate(50%, -50%) perspective(600px) ; /* Центрируем и вращаем окно */
-    transition: all 0.8s ease 0s; /* Плавное появление */
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-  }
+.popup__content {
+  background-color: #fff;
+  color: #000;
+  min-width: 500px;
+  min-height: 100vh;
+  padding: 15px 40px;
+  position: absolute;
+  top: 50%; /*Положение по вертикали в центре */
+  right: 0; /* Положение по горизонтали в центре */
+  transform: translate(50%, -50%) perspective(600px) ; /* Центрируем и вращаем окно */
+  transition: all 0.8s ease 0s; /* Плавное появление */
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
 
 .popup__close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
   font-size: 20px;
   color: #000;
   text-decoration: none;
@@ -117,27 +166,173 @@ body.lock {
 
 .popup__header {
   font-size: 20px;
-  margin: 0px 0px 1em 0px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.popup__text {
+.popup__header-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup__header-image {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/cart-blue.svg);
+  background-size: cover;
+  background-position: left;
+}
+
+.popup__header-title {
+  color: rgba(54, 37, 255, 1);
+  margin-left: 3px;
+  font-size: 16px;
+}
+
+.popup__container {
+  box-sizing: border-box;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 250px;
+}
+
+.popup__container-top {
+  height: 90%;
+  flex-grow: 15;
+}
+
+.cart-list__item {
+  transition: height 0.5s ease, opacity 0.5s ease;
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+.cart-list__item.removing {
+  height: 0;
+  opacity: 0;
+}
+
+.cart-list__item-container {
+  display: grid;
+  grid-template-columns: 40px 200px 60px 25px 30px;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+.thumbnailWrapper {
+  grid-column: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.productThumbnail {
+  object-fit: contain;
+  width: 40px;
+  height: 40px;
+}
+
+.productTitleWrapper {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productAmounWrapper {
+  border-radius: 5px;
+  width: 50px;
+  grid-column: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.minus,
+.plus {
+  width: 30px;
+  height: 20px;
+}
+
+.productAmount {
+  width: 35px;
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.productPriceWrapper {
+  grid-column: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productPrice {
 
 }
 
+.deleteFromCartWrapper {
+  grid-column: 5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.deleteFromCart {
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/trashcan.svg);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+  background-color: #FFFFFF;
+}
+
+
+
+
+
+.popup__container-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .popup__footer {
-  height: 50px; /* Высота футера */
+  margin-top: 10px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .button__backToProducts {
-  width: 280px;
+  border: none;
+  border-radius: 2px;
+  font-size: 18px;
+  width: 100%;
   height: 40px;
-  background-color: rgba(54, 37, 255, 1);
+  background-color: #3625ff;
   color: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s; /* добавляем плавный переход для box-shadow */
+}
+
+.button__backToProducts:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* добавляем тень вокруг кнопки */
 }
