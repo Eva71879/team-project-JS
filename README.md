@@ -54,6 +54,7 @@ GitHub
 - установить Webpack
 - чтобы перенести проект себе на компьтер, необходимо выполнить команду https://github.com/Eva71879/team-project-JS.git в терминале VS Code
 - https://github.com/Eva71879/team-project-JS.git
+- запуск проекта по команде npm run start
 
 <!-- # npm_webpack
 use npm install -->
