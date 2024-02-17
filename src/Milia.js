@@ -3,16 +3,16 @@ const categoryRow = document.querySelector(".category");
 
 async function getCardInfo() {
   try {
-      const response = await fetch('https://dummyjson.com/products/categories');
-      if (!response.ok) {
-        throw new Error('Ошибка при загрузке данных');
-      }
-      const productsCategories = await response.json();
-      console.log(productsCategories)
-      return productsCategories;
-      
+    const response = await fetch('https://dummyjson.com/products/categories');
+    if (!response.ok) {
+      throw new Error('Ошибка при загрузке данных');
+    }
+    const productsCategories = await response.json();
+    console.log(productsCategories)
+    return productsCategories;
+
   } catch (error) {
-      console.error('Ошибка:', error);
+    console.error('Ошибка:', error);
   }
 }
 
@@ -25,10 +25,10 @@ function createButtonElement(category) {
 }
 
 // функция добавления кнопки в строку
-function addButton(categoryRow, category) { 
-  const buttonElement = createButtonElement(category); 
-  categoryRow.innerHTML += buttonElement; 
-} 
+function addButton(categoryRow, category) {
+  const buttonElement = createButtonElement(category);
+  categoryRow.innerHTML += buttonElement;
+}
 
 
 // выводим кнопки на страницу
@@ -40,25 +40,25 @@ async function createButtons() {
       addButton(categoryRow, category);
     });
 
-  const buttons = document.querySelectorAll('.button');
+    const buttons = document.querySelectorAll('.button');
 
-  buttons.forEach(button => {
-    button.addEventListener('click', async () => {
-      if (button.classList.contains('active')) {
-        button.classList.remove('active');
-      } else {
-        // Удаляем класс 'active' у других кнопок
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-      };
+    buttons.forEach(button => {
+      button.addEventListener('click', async () => {
+        if (button.classList.contains('active')) {
+          button.classList.remove('active');
+        } else {
+          // Удаляем класс 'active' у других кнопок
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        };
 
-      // Получаем текст категории из кнопки
-      const category = button.textContent;
-      await displayCards(category);
-      console.log(category)
+        // Получаем текст категории из кнопки
+        const category = button.textContent;
+        await displayCards(category);
+        console.log(category)
+      });
     });
-  });
-    
+
   } catch (error) {
     console.error('Ошибка при отображении категорий:', error);
   }
@@ -78,7 +78,7 @@ function createCardElement(obj) {
         </div>
     </div>
   `;
-  
+
   return card;
 }
 
@@ -110,7 +110,7 @@ async function displayCards(category) {
   }
 }
 
-categoryRow.addEventListener('wheel', function(event) {
+categoryRow.addEventListener('wheel', function (event) {
   this.scrollLeft += event.deltaY;
   event.preventDefault()
 })
