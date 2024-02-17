@@ -10,6 +10,12 @@ body.lock {
   margin-right: 3px;
 }
 
+.soldOut {
+  font-size: 10px;
+  color: red;
+  font-weight: bold;
+}
+
 .price.putToCartButton {
   transition: box-shadow 0.2s; /* добавляем плавный переход для box-shadow */
   background-color: #3625FF;
@@ -37,6 +43,7 @@ body.lock {
   top: -5px; /* Переместить элемент вверх */
   right: -10px; /* Переместить элемент вправо */
   background-color: #3625ff;
+  border: 1.5px solid #FFFFFF;
   color: white;
   border-radius: 50%;
   width: 17px;
