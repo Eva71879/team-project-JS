@@ -117,12 +117,12 @@ $primaryColor: rgb(45, 155, 146);
   background-color: $color-blue;
   border-radius: 0 10px 10px 10px;
   color: #FFFFFF;
-  left: 150px;
+  left: 350px;
   line-height: 20px;
   padding: 15px;
   position: absolute;
   text-align: center;
-  top: 60px;
+  top: 70px;
   width: 250px;
 }
 
@@ -138,6 +138,7 @@ $primaryColor: rgb(45, 155, 146);
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   padding: 1px 0 0 0;
+  height: 100%;
 }
 
 
@@ -169,6 +170,7 @@ $primaryColor: rgb(45, 155, 146);
   background-color: #2E3438;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .discount {
