@@ -1,6 +1,7 @@
 @import url(_cart.scss);
-@import url(footer.css);
 @import url(_preloader.scss);
+@import url(_footer.scss);
+@import url(_yulia.scss);
 
 $color-main: #2E3438;
 $color-blue: #3625FF;
@@ -70,7 +71,7 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 //////////////////////////////////////////////////////////
-@import "yulia.css"; //search-block
+@import url(_yulia.scss); //search-block
 
 .search__block {
   display: flex;
