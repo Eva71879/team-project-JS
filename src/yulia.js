@@ -108,8 +108,8 @@ inputSearch.addEventListener('keyup', event => {
                             <span class='price-bin'></span>$${obj.price}
                         </button>
                     </div>
-                </div>;
-                `
+                </div>
+                `;
 
                 container.appendChild(card);
             })

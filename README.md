@@ -17,7 +17,6 @@ https://dummyjson.com/docs/products
 
 КАТЕГОРИИ  
 при выборе категории выводятся товары данной категории  
-кнопка all возвращает все товары  
 реализован горизонтальный скролл для маленьких экранов
 
 ПОИСК  
@@ -48,26 +47,8 @@ GitHub
 
 - установить NODE.JS
 - установить Webpack
-- чтобы перенести проект себе на компьтер, необходимо выполнить команду https://github.com/Eva71879/team-project-JS.git в терминале VS Code
+- чтобы перенести проект себе на компьтер, необходимо выполнить команду git clone https://github.com/Eva71879/team-project-JS.git в терминале VS Code
 - запуск проекта по команде npm run start
 
 <!-- # npm_webpack
 use npm install -->
-
-<!-- //создаем разметку карточки ----обновила код последней кнопки price------ -->
-<!-- function createCardElement(obj) {
-const card = `   <div class='item'>
-            <div class='item-product'>
-            <p class='discount'><span class='discount-percentage'>${obj.discountPercentage}</span> off sale</p>
-            <div class='image-block'><img src="${obj.thumbnail}" alt="thumbnail" class='image'></div>
-            <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
-            <p class='title'>${obj.title}</p>
-            <p class='description'>${obj.description}</p>
-            <button class='price putToCartButton' data-product='${JSON.stringify(obj)}'><span class='price-bin'></span>$${obj.price}</button>
-        </div>
-    </div>
-  `;
-
-    return card;
-
-} -->
