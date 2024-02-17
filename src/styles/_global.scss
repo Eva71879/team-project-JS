@@ -41,11 +41,6 @@ $primaryColor: rgb(45, 155, 146);
     display: flex;
     flex-wrap: row;
     align-items: center;
-    white-space: nowrap;
-
-    ::-webkit-scrollbar {
-      width: 0;
-    }
   }
 }
 
@@ -237,4 +232,11 @@ $primaryColor: rgb(45, 155, 146);
   overflow-x: auto;
   white-space: nowrap;
   gap: 2px;
+  margin-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
