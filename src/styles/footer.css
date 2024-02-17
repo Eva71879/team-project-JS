@@ -4,6 +4,10 @@
     height: 45px;
 }
 
+.logoImg {
+    width: 100%;
+}
+
 .company {
     color: #ffffff;
     font-weight: 800;
