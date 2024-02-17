@@ -1,5 +1,6 @@
 //получаем данные обо всех имеющихся продуктах (products)
-const categoryRow = document.querySelector(".category");
+const categoryRow = document.querySelector('.category');
+const logo = document.querySelector('.logo')
 
 async function getCardInfo() {
   try {
@@ -10,7 +11,6 @@ async function getCardInfo() {
     const productsCategories = await response.json();
     console.log(productsCategories)
     return productsCategories;
-
   } catch (error) {
     console.error('Ошибка:', error);
   }
@@ -33,7 +33,6 @@ function addButton(categoryRow, category) {
 
 // выводим кнопки на страницу
 async function createButtons() {
-
   try {
     const productsCategoriesData = await getCardInfo();
     productsCategoriesData.forEach((category) => {
@@ -46,6 +45,7 @@ async function createButtons() {
       button.addEventListener('click', async () => {
         if (button.classList.contains('active')) {
           button.classList.remove('active');
+          location.reload();
         } else {
           // Удаляем класс 'active' у других кнопок
           buttons.forEach(btn => btn.classList.remove('active'));
@@ -56,6 +56,7 @@ async function createButtons() {
         const category = button.textContent;
         await displayCards(category);
         console.log(category)
+
       });
     });
 
@@ -115,8 +116,8 @@ categoryRow.addEventListener('wheel', function (event) {
   event.preventDefault()
 })
 
-
-
 createButtons();
 
-
+logo.addEventListener('click', () => {
+  location.reload();
+})
