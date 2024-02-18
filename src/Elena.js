@@ -76,11 +76,11 @@ function createProductToAdd(obj) {
         "category": obj.category,
         "thumbnail": obj.thumbnail,
         "images": obj.images,
-        "count" : 1
+        "count": 1
     };
 }
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     try {
         // кнопка добавления продукта в корзину
         const putToCartButton = event.target.classList.contains('putToCartButton');
@@ -100,7 +100,7 @@ document.addEventListener('click', function(event) {
                     productAmountElement.textContent = cart[newProductId].count;
                 }
                 updateCartAmount()
-                
+
             } else {
                 // Добавляем новый товар в корзину
                 cart[newProductId] = {
@@ -138,7 +138,7 @@ document.addEventListener('click', function(event) {
                 cartList.insertAdjacentHTML('beforeend', cartItemHTML);
                 updateCartContents();
                 updateCartAmount();
-                
+
             }
 
             // Устанавливаем цвет кнопки, если продукт добавлен в корзину
@@ -196,7 +196,7 @@ const plusFunction = id => {
             productPriceElement.textContent = `$${cart[id].product.price * cart[id].count}`; // умножаем цену на количество
         }
     }
-    updateTotalPrice(); 
+    updateTotalPrice();
 
     // обновляем содержимое корзины после увеличения количества товара
     updateCartContents();
