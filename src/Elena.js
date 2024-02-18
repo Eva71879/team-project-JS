@@ -29,7 +29,7 @@ function createCardElement(obj) {
             <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
             <p class='title'>${obj.title}</p>
             <p class='description'>${obj.description}</p>
-            <button class='price putToCartButton' data-product='${JSON.stringify(obj)}'><span class='price-bin'></span>$${obj.price}</button>
+            <button class='price putToCartButton' data-product='${JSON.stringify(obj)}'><span class='price-bin'></span>$${obj.price}</button><span class='soldOut'></span>
         </div>
     </div>
     `;
@@ -81,92 +81,107 @@ function createProductToAdd(obj) {
 }
 
 document.addEventListener('click', function(event) {
-    // кнопка добавления продукта в корзину
-    const putToCartButton = event.target.classList.contains('putToCartButton');
-    if (putToCartButton) {
-        console.log('Кнопка "Добавить в корзину" была нажата');
-        const productData = JSON.parse(event.target.getAttribute('data-product'));
-        const productToAdd = createProductToAdd(productData);
-        const newProductId = 'product_' + productToAdd.id;
+    try {
+        // кнопка добавления продукта в корзину
+        const putToCartButton = event.target.classList.contains('putToCartButton');
+        if (putToCartButton) {
+            console.log('Кнопка "Добавить в корзину" была нажата');
+            const productData = JSON.parse(event.target.getAttribute('data-product'));
+            const productToAdd = createProductToAdd(productData);
+            const newProductId = 'product_' + productToAdd.id;
 
-        // Проверяем, есть ли товар уже в корзине
-        if (cart[newProductId]) {
-            // Увеличиваем количество товара в корзине
-            cart[newProductId].count++;
-            // Обновляем отображение количества товара в соответствующем элементе
-            const productAmountElement = document.querySelector(`[data-product-id="${newProductId}"] .productAmount`);
-            if (productAmountElement) {
-                productAmountElement.textContent = cart[newProductId].count;
+            // Проверяем, есть ли товар уже в корзине
+            if (cart[newProductId]) {
+                // Увеличиваем количество товара в корзине
+                cart[newProductId].count++;
+                // Обновляем отображение количества товара в соответствующем элементе
+                const productAmountElement = document.querySelector(`[data-product-id="${newProductId}"] .productAmount`);
+                if (productAmountElement) {
+                    productAmountElement.textContent = cart[newProductId].count;
+                }
+                updateCartAmount()
+                
+            } else {
+                // Добавляем новый товар в корзину
+                cart[newProductId] = {
+                    "product": productToAdd,
+                    "count": 1
+                };
+
+                updateCartAmount()
+
+                // Добавляем разметку нового товара в корзину
+                const cartList = document.querySelector('.popup__container');
+                const cartItemHTML = `
+                    <li class="cart-list__item" data-product-id="${newProductId}">
+                        <div class="cart-list__item-container">
+                            <div class="thumbnailWrapper">
+                                <img src="${productToAdd.thumbnail}" alt="thumbnail" class="productThumbnail">
+                            </div>
+                            <div class="productTitleWrapper">
+                                <p class="productTitle">${productToAdd.title}</p>
+                            </div>
+                            <div class="productAmounWrapper">
+                                <button class="minus" data-product-id="${newProductId}">-</button>
+                                <span class="productAmount">${productToAdd.count}</span>
+                                <button class="plus" data-product-id="${newProductId}">+</button>
+                            </div>
+                            <div class="productPriceWrapper">
+                                <p class="productPrice">$${productToAdd.price}</p>
+                            </div>
+                            <div class="deleteFromCartWrapper">
+                                <button class="deleteFromCart" id="deleteFromCart"></button>
+                            </div>
+                        </div>
+                    </li>
+                `;
+                cartList.insertAdjacentHTML('beforeend', cartItemHTML);
+                updateCartContents();
+                updateCartAmount();
+                
             }
-            updateCartAmount()
-        } else {
-            // Добавляем новый товар в корзину
-            cart[newProductId] = {
-                "product": productToAdd,
-                "count": 1
-            };
 
-            updateCartAmount()
+            // Устанавливаем цвет кнопки, если продукт добавлен в корзину
+            const addButton = event.target;
+            if (addButton) {
+                addButton.style.backgroundColor = '#0C0099';
+                addButton.dataset.productId = newProductId; // Привязываем id продукта к кнопке
+            }
 
-            // Добавляем разметку нового товара в корзину
-            const cartList = document.querySelector('.popup__container');
-            const cartItemHTML = `
-                <li class="cart-list__item" data-product-id="${newProductId}">
-                    <div class="cart-list__item-container">
-                        <div class="thumbnailWrapper">
-                            <img src="${productToAdd.thumbnail}" alt="thumbnail" class="productThumbnail">
-                        </div>
-                        <div class="productTitleWrapper">
-                            <p class="productTitle">${productToAdd.title}</p>
-                        </div>
-                        <div class="productAmounWrapper">
-                            <button class="minus" data-product-id="${newProductId}">-</button>
-                            <span class="productAmount">${productToAdd.count}</span>
-                            <button class="plus" data-product-id="${newProductId}">+</button>
-                        </div>
-                        <div class="productPriceWrapper">
-                            <p class="productPrice">$${productToAdd.price}</p>
-                        </div>
-                        <div class="deleteFromCartWrapper">
-                            <button class="deleteFromCart" id="deleteFromCart"></button>
-                        </div>
-                    </div>
-                </li>
-            `;
-            cartList.insertAdjacentHTML('beforeend', cartItemHTML);
-            updateCartContents();
-            updateCartAmount();
-            
+            updateTotalPrice(); // Вызываем функцию для обновления общей суммы цен
         }
 
-        // Устанавливаем цвет кнопки, если продукт добавлен в корзину
-        const addButton = event.target;
-        if (addButton) {
-            addButton.style.backgroundColor = '#0C0099';
-            addButton.dataset.productId = newProductId; // Привязываем id продукта к кнопке
+        // кнопка "plus"
+        if (event.target.classList.contains('plus')) {
+            const productId = event.target.getAttribute('data-product-id');
+            plusFunction(productId);
         }
 
-        updateTotalPrice(); // Вызываем функцию для обновления общей суммы цен
-    }
+        // кнопка "minus"
+        if (event.target.classList.contains('minus')) {
+            const productId = event.target.getAttribute('data-product-id');
+            minusFunction(productId);
+        }
 
-    // кнопка "plus"
-    if (event.target.classList.contains('plus')) {
-        const productId = event.target.getAttribute('data-product-id');
-        plusFunction(productId);
-    }
-
-    // кнопка "minus"
-    if (event.target.classList.contains('minus')) {
-        const productId = event.target.getAttribute('data-product-id');
-        minusFunction(productId);
-    }
-
-    // кнопка удаления из корзины
-    if (event.target.classList.contains('deleteFromCart')) {
-        const productId = event.target.closest('.cart-list__item').getAttribute('data-product-id');
-        deleteFunction(productId);
+        // кнопка удаления из корзины
+        if (event.target.classList.contains('deleteFromCart')) {
+            const productId = event.target.closest('.cart-list__item').getAttribute('data-product-id');
+            deleteFunction(productId);
+        }
+    } catch (error) {
+        console.error('Ошибка при обработке события click:', error);
+        // Находим родительскую карточку по атрибуту data-product-id
+        const cardElement = event.target.closest('.item-product');
+        if (cardElement) {
+            // Находим элемент price-bin внутри этой карточки
+            const errorElement = cardElement.querySelector('.soldOut');
+            if (errorElement) {
+                errorElement.textContent = 'Товар закончился!';
+            }
+        }
     }
 });
+
 
 // увеличение количества товара
 const plusFunction = id => {

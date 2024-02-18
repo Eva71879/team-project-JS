@@ -1,15 +1,11 @@
 @import url(_cart.scss);
-@import url(footer.css);
+@import url(_preloader.scss);
+@import url(_footer.scss);
+@import url(_yulia.scss);
 
 $color-main: #2E3438;
 $color-blue: #3625FF;
 $font-inter: 'Inter', sans-serif;
-
-$font-sizes: (
-  xs: 12px,
-  s: 14px,
-  m: 15px,
-);
 
 * {
   margin: 0;
@@ -50,6 +46,7 @@ $primaryColor: rgb(45, 155, 146);
   font-weight: bolder;
   font-size: 36px;
   padding: 0 0 0 14px;
+  cursor: pointer;
 }
 
 .button {
@@ -74,7 +71,7 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 //////////////////////////////////////////////////////////
-@import "yulia.css"; //search-block
+@import url(_yulia.scss); //search-block
 
 .search__block {
   display: flex;
@@ -89,6 +86,7 @@ $primaryColor: rgb(45, 155, 146);
   background-position: center;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
 }
 
 .inputSearch {
@@ -145,7 +143,7 @@ $primaryColor: rgb(45, 155, 146);
 .item {
   background-color: #EFEEF4;
   min-width: 320px;
-  min-height: 468px;
+  min-height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,12 +214,13 @@ $primaryColor: rgb(45, 155, 146);
 .title {
   font-size: 14px;
   line-height: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  min-height: 44px;
 }
 
 .price {
