@@ -2,12 +2,13 @@
 https://dummyjson.com/docs/products
 // - [проект на GitHub Pages](https://eva71879.github.io/team-project-JS/)
 
-ПРОЕКТНАЯ КОМАНДА  
+ПРОЕКТНАЯ КОМАНДА
+- Елена Кошелева (https://github.com/Eva71879)
+- Миляуша Хуснуллина (https://github.com/Milia-K)
+- Юлия Старикова (https://github.com/CodeMeYulia)
+- Алена Вяткина (https://github.com/Kashinka)
 
-- Елена Кошелева (https://github.com/Eva71879)  
-- Миляуша Хуснуллина (https://github.com/Milia-K)  
-- Юлия Старикова (https://github.com/CodeMeYulia)  
-- Алена Вяткина (https://github.com/Kashinka)  
+----------------------------------------------------
 
 ФУНКЦИОНАЛЬНОСТЬ И ОПИСАНИЕ САЙТА  
 Проект был создан командой в рамках практических работ в школе IT Girls.  

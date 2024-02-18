@@ -80,19 +80,6 @@ inputSearch.addEventListener('keyup', event => {
             //формируем карточки для каждого товара и добавляем в контент-блок
             searchCardsOnPage.forEach((obj) => {
                 const card = document.createElement('div');
-                // card.innerHTML = `
-                // // <div class='item'>
-                // // <div class='item-product'>
-                // // <p class='discount'><span class='discount-percentage'>${obj.discountPercentage}</span> off sale</p>
-                // // <div class='image-block'><img src="${obj.thumbnail}" alt="thumbnail" class='image'></div>
-                // // <p class='rating'><span class='rating-star'>&#10033;</span> ${obj.rating}</p>
-                // // <p class='title'>${obj.title}</p>
-                // // <p class='description'>${obj.description}</p>
-                // // <p class='price'><span class='price-bin'></span>$${obj.price}</p>
-                // // </div>
-                // // </div>
-                // `;
-
                 card.innerHTML = `
                 <div class='item'>
                     <div class='item-product'>

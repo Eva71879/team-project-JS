@@ -1,7 +1,7 @@
 @import url(_cart.scss);
 @import url(_preloader.scss);
 @import url(_footer.scss);
-@import url(_yulia.scss);
+@import url(_pagination.scss);
 
 $color-main: #2E3438;
 $color-blue: #3625FF;
@@ -71,8 +71,6 @@ $primaryColor: rgb(45, 155, 146);
 }
 
 //////////////////////////////////////////////////////////
-@import url(_yulia.scss); //search-block
-
 .search__block {
   display: flex;
   margin: 0 8px 0 18px;
@@ -139,7 +137,6 @@ $primaryColor: rgb(45, 155, 146);
   height: 100%;
 }
 
-
 .item {
   background-color: #EFEEF4;
   min-width: 320px;
@@ -159,6 +156,20 @@ $primaryColor: rgb(45, 155, 146);
   }
 }
 
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content__wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .footer {
   display: flex;
   height: 50px;
@@ -168,7 +179,7 @@ $primaryColor: rgb(45, 155, 146);
   background-color: #2E3438;
   justify-content: space-around;
   align-items: center;
-
+  margin-top: auto;
 }
 
 .discount {
