@@ -1,5 +1,5 @@
 Проект вёрстки маркетплейса "Randomberries" с функциональностью поиска, категорий и корзины на базе API:
-https://dummyjson.com/docs/products
+https://dummyjson.com/docs/products  
 // - [проект на GitHub Pages](https://eva71879.github.io/team-project-JS/)
 
 ПРОЕКТНАЯ КОМАНДА
